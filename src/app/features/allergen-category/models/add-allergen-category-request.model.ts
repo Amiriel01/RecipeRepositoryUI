@@ -1,4 +1,4 @@
 export interface AddAllergenCategoryRequest {
-    name: string,
-    urlHandle: string,
+    allergenName: string,
+    allergenUrlHandle: string,
 }

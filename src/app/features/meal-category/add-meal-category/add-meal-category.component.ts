@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AddMealCategoryRequest } from '../models/add-meal-category-request.model';
+import { MealCategoryService } from '../services/meal-category.service';
 
 @Component({
   selector: 'app-add-meal-category',
@@ -12,15 +13,23 @@ export class AddMealCategoryComponent {
   model: AddMealCategoryRequest
 
   //initiate model in the constructor
-  constructor() {
+  constructor(private mealCategoryService: MealCategoryService) {
     this.model = {
-      name: '',
-      urlHandle: '',
+      mealName: '',
+      mealUrlHandle: '',
     }
   }
 
   onFormSubmit() {
-    
+    this.mealCategoryService.AddMealCategory(this.model)
+    .subscribe({
+      next: (response => {
+        console.log('success')
+      }),
+      error: (error) => {
+        
+      }
+    });
   }
 
 }

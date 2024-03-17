@@ -1,4 +1,4 @@
 export interface AddMealCategoryRequest {
-    name: string,
-    urlHandle: string,
+    mealName: string,
+    mealUrlHandle: string,
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AddAllergenCategoryRequest } from '../../models/add-allergen-category-request.model';
+import { AllergenCategoryService } from '../../services/allergen-category.service';
 
 @Component({
   selector: 'app-add-allergen-category',
@@ -12,15 +13,23 @@ export class AddAllergenCategoryComponent {
     model: AddAllergenCategoryRequest
 
     //initiate model in the constructor
-  constructor() {
+  constructor(private allergenCategoryService: AllergenCategoryService) {
     this.model = {
-      name: '',
-      urlHandle: '',
+      allergenName: '',
+      allergenUrlHandle: '',
     }
   }
 
   onFormSubmit() {
-    
+    this.allergenCategoryService.AddAllergenCategory(this.model)
+    .subscribe({
+      next: (response => {
+        console.log('success')
+      }),
+      error: (error) => {
+        
+      }
+    });
   }
 
 }
