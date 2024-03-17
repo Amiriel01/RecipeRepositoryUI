@@ -1,0 +1,26 @@
+#header-container {
+    background-color: #342626;
+    padding: 1rem;
+}
+
+#header-contents-container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+a {
+    color: #b9afb9;
+    font-size: 4rem;
+}
+
+a:hover {
+    color: #976f6b;
+}
+
+span {
+    font-size: 3rem;
+}
