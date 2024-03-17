@@ -7,4 +7,24 @@
             Add Meal Category
         </a>
     </div>
+    <ng-container *ngIf="mealCategories$ | async as mealCategories">
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>
+                        Meal Category Name
+                    </th>
+                    <th>
+                        Meal Category Url Handle
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of mealCategories">
+                    <td>{{category.mealName}}</td>
+                    <td>{{category.mealUrlHandle}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
 </div>

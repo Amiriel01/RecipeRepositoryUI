@@ -2,6 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { AddMealCategoryRequest } from '../models/add-meal-category-request.model';
 import { MealCategoryService } from '../services/meal-category.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-meal-category',
@@ -15,7 +16,7 @@ export class AddMealCategoryComponent implements OnDestroy {
   private addMealCategorySubscription?: Subscription
 
   //initiate model in the constructor
-  constructor(private mealCategoryService: MealCategoryService) {
+  constructor(private mealCategoryService: MealCategoryService, private router: Router) {
     this.model = {
       mealName: '',
       mealUrlHandle: '',
@@ -23,10 +24,10 @@ export class AddMealCategoryComponent implements OnDestroy {
   }
 
   onFormSubmit() {
-    this.addMealCategorySubscription = this.mealCategoryService.AddMealCategory(this.model)
+    this.addMealCategorySubscription = this.mealCategoryService.addMealCategory(this.model)
       .subscribe({
         next: (response => {
-          console.log('success')
+          this.router.navigateByUrl('/admin/Meals')
         }),
         error: (error) => {
           console.log(error)

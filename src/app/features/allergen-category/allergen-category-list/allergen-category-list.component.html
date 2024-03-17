@@ -7,4 +7,24 @@
             Add Allergen Category
         </a>
     </div>
+    <ng-container *ngIf="allergenCategories$ | async as allergenCategories">
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>
+                        Allergen Category Name
+                    </th>
+                    <th>
+                        Allergen Category Url Handle
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of allergenCategories">
+                    <td>{{category.allergenName}}</td>
+                    <td>{{category.allergenUrlHandle}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
 </div>
