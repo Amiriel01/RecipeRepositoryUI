@@ -23,6 +23,11 @@
                 <tr *ngFor="let category of allergenCategories">
                     <td>{{category.allergenName}}</td>
                     <td>{{category.allergenUrlHandle}}</td>
+                    <td>
+                        <a class="btn btn-light" [routerLink]="['/admin/allergen-categories', category.id]">
+                            Edit
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

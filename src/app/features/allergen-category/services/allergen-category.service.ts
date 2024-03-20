@@ -4,6 +4,7 @@ import { AddAllergenCategoryRequest } from '../models/add-allergen-category-requ
 import { Observable } from 'rxjs';
 import { AllergenCategory } from '../models/allergen-category.model';
 import { environment } from 'src/environments/environment.development';
+import { UpdateAllergenCategoryRequest } from '../models/update-allergen-category-request.models';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,16 @@ export class AllergenCategoryService {
     return this.http.get<AllergenCategory[]>(`${environment.apiBaseUrl}/api/Allergen`);
   }
 
+  getAllergenCategoryById(id: string): Observable<AllergenCategory> {
+    return this.http.get<AllergenCategory>(`${environment.apiBaseUrl}/api/Allergen/${id}`);
+  }
+
   AddAllergenCategory(model: AddAllergenCategoryRequest): Observable<void> {
     return this.http.post<void>(`${environment.apiBaseUrl}/api/Allergen`, model);
+  }
+
+  updateAllergenCategory(id: string, updateAllergenCategoryRequest: UpdateAllergenCategoryRequest): Observable<AllergenCategory> {
+    return this.http.put<AllergenCategory>(`${environment.apiBaseUrl}/api/Allergen/${id}`, updateAllergenCategoryRequest);
   }
 
 }

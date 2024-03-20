@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="mt-3">
+        Edit Allergen Category
+    </h1>
+    <ng-container *ngIf="allergenCategory; else notFound">
+        <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+            <div class="mt-2">
+                <div class="mt-3">
+                    <label for="allergenName" class="form-label">
+                        Name
+                    </label>
+                    <input type="text" id="allergenName" class="form-control" name="allergenName" value="{{allergenCategory.allergenName}}" [(ngModel)]="allergenCategory.allergenName">
+                </div>
+            </div>
+            <div class="mt-2">
+                <div class="mt-3">
+                    <label for="allergenUrlHandle" class="form-label">
+                        Url Handle
+                    </label>
+                    <input type="text" id="allergenUrlHandle" class="form-control" name="allergenUrlHandle" value="{{allergenCategory.allergenUrlHandle}}" [(ngModel)]="allergenCategory.allergenUrlHandle">
+                </div>
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </ng-container>
+    <ng-template #notFound>
+        <div class="alert alert-warning" role="alert">
+            Allergen Category Not Found
+        </div>
+    </ng-template>
+</div>
