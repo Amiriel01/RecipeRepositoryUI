@@ -23,6 +23,11 @@
                 <tr *ngFor="let category of mealCategories">
                     <td>{{category.mealName}}</td>
                     <td>{{category.mealUrlHandle}}</td>
+                    <td>
+                        <a class="btn btn-light" [routerLink]="['/admin/meal-categories', category.id]">
+                            Edit
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

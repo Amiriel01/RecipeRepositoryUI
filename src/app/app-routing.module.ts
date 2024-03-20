@@ -4,6 +4,7 @@ import { MealCategoryListComponent } from './features/meal-category/meal-categor
 import { AllergenCategoryListComponent } from './features/allergen-category/allergen-category-list/allergen-category-list.component';
 import { AddMealCategoryComponent } from './features/meal-category/add-meal-category/add-meal-category.component';
 import { AddAllergenCategoryComponent } from './features/allergen-category/add-allergen-category/add-allergen-category/add-allergen-category.component';
+import { EditMealCategoryComponent } from './features/meal-category/edit-meal-category/edit-meal-category.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'admin/allergen-categories/add',
     component: AddAllergenCategoryComponent
+  },
+  {
+    path: 'admin/meal-categories/:id',
+    component: EditMealCategoryComponent
   },
 ];
 

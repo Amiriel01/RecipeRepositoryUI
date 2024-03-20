@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="mt-3">
+        Edit Meal Category
+    </h1>
+    <ng-container *ngIf="mealCategory; else notFound">
+        <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+            <div class="mt-2">
+                <div class="mt-3">
+                    <label for="mealName" class="form-label">
+                        Name
+                    </label>
+                    <input type="text" id="mealName" class="form-control" name="mealName" value="{{mealCategory.mealName}}" [(ngModel)]="mealCategory.mealName">
+                </div>
+            </div>
+            <div class="mt-2">
+                <div class="mt-3">
+                    <label for="mealUrlHandle" class="form-label">
+                        Url Handle
+                    </label>
+                    <input type="text" id="mealUrlHandle" class="form-control" name="mealUrlHandle" value="{{mealCategory.mealUrlHandle}}" [(ngModel)]="mealCategory.mealUrlHandle">
+                </div>
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </ng-container>
+    <ng-template #notFound>
+        <div class="alert alert-warning" role="alert">
+            Meal Category Not Found
+        </div>
+    </ng-template>
+</div>

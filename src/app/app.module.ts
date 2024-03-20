@@ -11,7 +11,7 @@ import { AddMealCategoryComponent } from './features/meal-category/add-meal-cate
 import { FormsModule } from '@angular/forms';
 import { AddAllergenCategoryComponent } from './features/allergen-category/add-allergen-category/add-allergen-category/add-allergen-category.component';
 import { HttpClientModule } from '@angular/common/http';
-import { EditCategoryComponent } from './features/meal-category/edit-category/edit-category.component';
+import { EditMealCategoryComponent } from './features/meal-category/edit-meal-category/edit-meal-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,7 @@ import { EditCategoryComponent } from './features/meal-category/edit-category/ed
     AllergenCategoryListComponent,
     AddMealCategoryComponent,
     AddAllergenCategoryComponent,
-    EditCategoryComponent
+    EditMealCategoryComponent
   ],
   imports: [
     BrowserModule,
