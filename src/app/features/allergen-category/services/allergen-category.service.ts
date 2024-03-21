@@ -29,4 +29,7 @@ export class AllergenCategoryService {
     return this.http.put<AllergenCategory>(`${environment.apiBaseUrl}/api/Allergen/${id}`, updateAllergenCategoryRequest);
   }
 
+  deleteAllergenCategory(id: string): Observable<AllergenCategory> {
+    return this.http.delete<AllergenCategory>(`${environment.apiBaseUrl}/api/Allergen/${id}`);
+  }
 }

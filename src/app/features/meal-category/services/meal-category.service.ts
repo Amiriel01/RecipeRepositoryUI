@@ -28,4 +28,8 @@ export class MealCategoryService {
   updateMealCategory(id: string, updateMealCategoryRequest: UpdateMealCategoryRequest): Observable<MealCategory> {
     return this.http.put<MealCategory>(`${environment.apiBaseUrl}/api/Meals/${id}`, updateMealCategoryRequest);
   }
+
+  deleteMealCategory(id: string): Observable<MealCategory> {
+    return this.http.delete<MealCategory>(`${environment.apiBaseUrl}/api/Meals/${id}`);
+  }
 }

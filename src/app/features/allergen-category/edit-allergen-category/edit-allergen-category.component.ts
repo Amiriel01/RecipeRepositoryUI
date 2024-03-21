@@ -24,16 +24,16 @@ export class EditAllergenCategoryComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.paramsSubscription = this.route.paramMap.subscribe({
       next: (params) => {
-       this.id = params.get('id');
+        this.id = params.get('id');
 
-       if (this.id) {
-        this.allergenCategoryService.getAllergenCategoryById(this.id)
-        .subscribe({
-          next: (response) => {
-            this.allergenCategory = response;
-          }
-        });
-       }
+        if (this.id) {
+          this.allergenCategoryService.getAllergenCategoryById(this.id)
+            .subscribe({
+              next: (response) => {
+                this.allergenCategory = response;
+              }
+            });
+        }
       }
     });
   }
@@ -48,13 +48,25 @@ export class EditAllergenCategoryComponent implements OnInit, OnDestroy {
     //pass object to service
     if (this.id) {
       this.editAllergenCategorySubscription = this.allergenCategoryService.updateAllergenCategory(this.id, updateAllergenCategoryRequest)
-      .subscribe({
-        next: (response) => {
-          this.router.navigateByUrl('/admin/allergen-categories');
-        }
-      });
+        .subscribe({
+          next: (response) => {
+            this.router.navigateByUrl('/admin/allergen-categories');
+          }
+        });
     };
   }
+
+  onDelete(): void {
+    if (this.id) {
+      this.allergenCategoryService.deleteAllergenCategory(this.id)
+        .subscribe({
+          next: (response) => {
+            this.router.navigateByUrl('/admin/allergen-categories');
+          }
+        });
+    }
+  }
+
 
   ngOnDestroy(): void {
     this.paramsSubscription?.unsubscribe();

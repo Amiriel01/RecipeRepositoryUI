@@ -56,6 +56,17 @@ export class EditMealCategoryComponent implements OnInit, OnDestroy {
     };
   }
 
+  onDelete(): void {
+    if (this.id) {
+      this.mealCategoryService.deleteMealCategory(this.id)
+      .subscribe ({
+        next: (response) => {
+          this.router.navigateByUrl('/admin/meal-categories');
+        }
+      });
+    }  
+  }
+
   ngOnDestroy(): void {
     this.paramsSubscription?.unsubscribe();
     this.editMealCategorySubscription?.unsubscribe();
