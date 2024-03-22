@@ -6,6 +6,8 @@ import { AddMealCategoryComponent } from './features/meal-category/add-meal-cate
 import { AddAllergenCategoryComponent } from './features/allergen-category/add-allergen-category/add-allergen-category/add-allergen-category.component';
 import { EditMealCategoryComponent } from './features/meal-category/edit-meal-category/edit-meal-category.component';
 import { EditAllergenCategoryComponent } from './features/allergen-category/edit-allergen-category/edit-allergen-category.component';
+import { RecipeDetailsListComponent } from './features/recipe-details/recipe-details-list/recipe-details-list.component';
+import { AddRecipeDetailsComponent } from './features/recipe-details/add-recipe-details/add-recipe-details.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,14 @@ const routes: Routes = [
   {
     path: 'admin/allergen-categories/:id',
     component: EditAllergenCategoryComponent
+  },
+  {
+    path: 'admin/recipe-details',
+    component: RecipeDetailsListComponent
+  },
+  {
+    path: 'admin/recipe-details/add',
+    component: AddRecipeDetailsComponent
   },
 ];
 

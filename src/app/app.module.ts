@@ -13,6 +13,8 @@ import { AddAllergenCategoryComponent } from './features/allergen-category/add-a
 import { HttpClientModule } from '@angular/common/http';
 import { EditMealCategoryComponent } from './features/meal-category/edit-meal-category/edit-meal-category.component';
 import { EditAllergenCategoryComponent } from './features/allergen-category/edit-allergen-category/edit-allergen-category.component';
+import { RecipeDetailsListComponent } from './features/recipe-details/recipe-details-list/recipe-details-list.component';
+import { AddRecipeDetailsComponent } from './features/recipe-details/add-recipe-details/add-recipe-details.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { EditAllergenCategoryComponent } from './features/allergen-category/edit
     AddMealCategoryComponent,
     AddAllergenCategoryComponent,
     EditMealCategoryComponent,
-    EditAllergenCategoryComponent
+    EditAllergenCategoryComponent,
+    RecipeDetailsListComponent,
+    AddRecipeDetailsComponent
   ],
   imports: [
     BrowserModule,

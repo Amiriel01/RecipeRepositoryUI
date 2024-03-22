@@ -22,11 +22,14 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" [routerLink]="['/admin/meal-categories']">Meal Category</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item" [routerLink]="['/admin/allergen-categories']">Allergen Category</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Recipe Details</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/admin/recipe-details']">Recipe List</a></li>
                     </ul>
                 </li>
             </ul>
