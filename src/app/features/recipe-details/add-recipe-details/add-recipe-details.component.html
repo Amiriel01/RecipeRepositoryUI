@@ -2,33 +2,33 @@
     <h1 class="mt-3">
         Add Recipe Details
     </h1>
-    <form>
+    <form #form="ngForm" (ngSubmit)="onFormSubmit()">
         <div class="mt-2 mb-5">
             <div class="mt-3">
                 <label for="recipeName" class="form-label">Name</label>
-                <input type="text" id="recipeName" name="recipeName" class="form-control">
+                <input type="text" id="recipeName" name="recipeName" class="form-control" [(ngModel)]="model.recipeName">
             </div>
             <div class="mt-3">
                 <label for="recipeUrlHandle" class="form-label">Url Handle</label>
-                <input type="text" id="recipeUrlHandle" name="recipeUrlHandle" class="form-control">
+                <input type="text" id="recipeUrlHandle" name="recipeUrlHandle" class="form-control" [(ngModel)]="model.recipeUrlHandle">
             </div>
             <div class="mt-3">
                 <label for="recipeShortDescription" class="form-label">Short Description</label>
-                <input type="text" id="recipeName" name="recipeShortDescription" class="form-control">
+                <input type="text" id="recipeShortDescription" name="recipeShortDescription" class="form-control" [(ngModel)]="model.recipeShortDescription">
             </div>
             <div class="mt-3">
                 <label for="recipeContent" class="form-label">Content</label>
-                <textarea type="text" id="recipeName" name="recipeName" class="form-control"></textarea>
+                <textarea type="text" id="recipeContent" name="recipeContent" class="form-control" [(ngModel)]="model.recipeContent"></textarea>
             </div>
             <div class="mt-3">
                 <label for="recipeImage" class="form-label">Image</label>
-                <input type="text" id="recipeImage" name="recipeImage" class="form-control">
+                <input type="text" id="recipeImage" name="recipeImage" class="form-control" [(ngModel)]="model.recipeImage">
             </div>
             <div class="form-check mt-3">
-                <input class="form-check-input" type="checkbox" id="isVisible">
                 <label class="form-check-label" for="isVisible">
                     Show Recipe
                 </label>
+                <input name="isVisible" class="form-check-input" type="checkbox" id="isVisible" [(ngModel)]="model.isVisible">
             </div>
             <div class="mt-3">
                 <button type="submit" class="btn">
