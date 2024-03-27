@@ -7,4 +7,38 @@
             Add Recipe
         </a>
     </div>
+    <ng-container *ngIf="recipeDetails$ | async as recipeDetails">
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Short Description</th>
+                    <th>Meal</th>
+                    <th>Allergen</th>
+                    <th>isVisible</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let recipeDetail of recipeDetails">
+                    <td>{{recipeDetail.recipeName}}</td>
+                    <td>{{recipeDetail.recipeShortDescription}}</td>
+                    <td>
+                        <span *ngFor="let category of recipeDetail.mealCategories">
+                            <span class="badge badge-secondary">{{category.mealName}}</span>
+                        </span>
+                    </td>
+                    <td>
+                        <span *ngFor="let category of recipeDetail.allergenCategories">
+                            <span class="badge badge-secondary">{{category.allergenName}}</span>
+                        </span>
+                    </td>
+                    <td>{{recipeDetail.isVisible}}</td>
+                    <td>
+                        <a class="btn " [routerLink]="['/admin/recipe-details', recipeDetail.id]">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
 </div>

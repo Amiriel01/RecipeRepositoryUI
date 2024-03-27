@@ -12,6 +12,10 @@ export class RecipeDetailsService {
 
   constructor(private http: HttpClient) { }
 
+  getAllRecipes() : Observable<RecipeDetails[]> {
+    return this.http.get<RecipeDetails[]>(`${environment.apiBaseUrl}/api/RecipeDetails`);
+  }
+
   createRecipeDetails(data: AddRecipeDetails) : Observable<RecipeDetails> {
     return this.http.post<RecipeDetails>(`${environment.apiBaseUrl}/api/RecipeDetails`, data);
   }
