@@ -24,13 +24,13 @@
                     <td>{{recipeDetail.recipeName}}</td>
                     <td>{{recipeDetail.recipeShortDescription}}</td>
                     <td>
-                        <span *ngFor="let category of recipeDetail.mealCategories">
-                            <span class="badge badge-secondary">{{category.mealName}}</span>
+                        <span *ngFor="let meal of recipeDetail.mealCategories">
+                            <span class="badge bg-secondary me-2">{{meal.mealName}}</span>
                         </span>
                     </td>
                     <td>
-                        <span *ngFor="let category of recipeDetail.allergenCategories">
-                            <span class="badge badge-secondary">{{category.allergenName}}</span>
+                        <span *ngFor="let allergen of recipeDetail.allergenCategories">
+                            <span class="badge bg-secondary me-2">{{allergen.allergenName}}</span>
                         </span>
                     </td>
                     <td>{{recipeDetail.isVisible}}</td>
