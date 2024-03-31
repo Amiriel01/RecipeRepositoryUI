@@ -6,29 +6,55 @@
         <div class="mt-2 mb-5">
             <div class="mt-3">
                 <label for="recipeName" class="form-label">Name</label>
-                <input type="text" id="recipeName" name="recipeName" class="form-control" [(ngModel)]="model.recipeName">
+                <input type="text" id="recipeName" name="recipeName" class="form-control"
+                    [(ngModel)]="model.recipeName">
             </div>
             <div class="mt-3">
                 <label for="recipeUrlHandle" class="form-label">Url Handle</label>
-                <input type="text" id="recipeUrlHandle" name="recipeUrlHandle" class="form-control" [(ngModel)]="model.recipeUrlHandle">
+                <input type="text" id="recipeUrlHandle" name="recipeUrlHandle" class="form-control"
+                    [(ngModel)]="model.recipeUrlHandle">
             </div>
             <div class="mt-3">
                 <label for="recipeShortDescription" class="form-label">Short Description</label>
-                <input type="text" id="recipeShortDescription" name="recipeShortDescription" class="form-control" [(ngModel)]="model.recipeShortDescription">
+                <input type="text" id="recipeShortDescription" name="recipeShortDescription" class="form-control"
+                    [(ngModel)]="model.recipeShortDescription">
             </div>
             <div class="mt-3">
                 <label for="recipeContent" class="form-label">Content</label>
-                <textarea type="text" id="recipeContent" name="recipeContent" class="form-control" [(ngModel)]="model.recipeContent"></textarea>
+                <textarea type="text" id="recipeContent" name="recipeContent" class="form-control"
+                    [(ngModel)]="model.recipeContent"></textarea>
             </div>
             <div class="mt-3">
                 <label for="recipeImage" class="form-label">Image</label>
-                <input type="text" id="recipeImage" name="recipeImage" class="form-control" [(ngModel)]="model.recipeImage">
+                <input type="text" id="recipeImage" name="recipeImage" class="form-control"
+                    [(ngModel)]="model.recipeImage">
+            </div>
+            <div class="mt-3">
+                <label for="mealCategories" class="form-label">Meal Categories</label>
+                <ng-container *ngIf="mealCategories$ | async as mealCategories">
+                    <select class="form-control" name="mealCategories" id="mealCategories" multiple>
+                        <option *ngFor="let mealCategory of mealCategories" [value]="mealCategory.id">
+                            {{mealCategory.mealName}}
+                        </option>
+                    </select>
+                </ng-container>
+            </div>
+            <div class="mt-3">
+                <label for="allergenCategories" class="form-label">Allergen Categories</label>
+                <ng-container *ngIf="allergenCategories$ | async as allergenCategories">
+                    <select class="form-control" name="allergenCategories" id="allergenCategories" multiple>
+                        <option *ngFor="let allergenCategory of allergenCategories" [value]="allergenCategory.id">
+                            {{allergenCategory.allergenName}}
+                        </option>
+                    </select>
+                </ng-container>
             </div>
             <div class="form-check mt-3">
                 <label class="form-check-label" for="isVisible">
                     Show Recipe
                 </label>
-                <input name="isVisible" class="form-check-input" type="checkbox" id="isVisible" [(ngModel)]="model.isVisible">
+                <input name="isVisible" class="form-check-input" type="checkbox" id="isVisible"
+                    [(ngModel)]="model.isVisible">
             </div>
             <div class="mt-3">
                 <button type="submit" class="btn">
