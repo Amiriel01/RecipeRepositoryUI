@@ -26,6 +26,8 @@ export class AddRecipeDetailsComponent implements OnInit {
       recipeContent: '',
       recipeImage: '',
       isVisible: true,
+      mealCategories: [],
+      allergenCategories: [],
     }
   }
 
@@ -38,7 +40,7 @@ export class AddRecipeDetailsComponent implements OnInit {
     this.recipeDetailsService.createRecipeDetails(this.model)
       .subscribe({
         next: (response) => {
-          this.router.navigateByUrl('/admin/Recipes')
+          this.router.navigateByUrl('/admin/recipe-details')
         }
       });
   }

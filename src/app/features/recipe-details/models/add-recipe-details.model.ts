@@ -5,4 +5,6 @@ export interface AddRecipeDetails {
     recipeContent: string,
     recipeImage: string,
     isVisible: boolean,
+    mealCategories: string[],
+    allergenCategories: string[],
 }

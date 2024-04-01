@@ -32,7 +32,7 @@
             <div class="mt-3">
                 <label for="mealCategories" class="form-label">Meal Categories</label>
                 <ng-container *ngIf="mealCategories$ | async as mealCategories">
-                    <select class="form-control" name="mealCategories" id="mealCategories" multiple>
+                    <select [(ngModel)]="model.mealCategories" class="form-control" name="mealCategories" id="mealCategories" multiple>
                         <option *ngFor="let mealCategory of mealCategories" [value]="mealCategory.id">
                             {{mealCategory.mealName}}
                         </option>
@@ -42,7 +42,7 @@
             <div class="mt-3">
                 <label for="allergenCategories" class="form-label">Allergen Categories</label>
                 <ng-container *ngIf="allergenCategories$ | async as allergenCategories">
-                    <select class="form-control" name="allergenCategories" id="allergenCategories" multiple>
+                    <select [(ngModel)]="model.allergenCategories" class="form-control" name="allergenCategories" id="allergenCategories" multiple>
                         <option *ngFor="let allergenCategory of allergenCategories" [value]="allergenCategory.id">
                             {{allergenCategory.allergenName}}
                         </option>
