@@ -15,6 +15,7 @@ import { EditMealCategoryComponent } from './features/meal-category/edit-meal-ca
 import { EditAllergenCategoryComponent } from './features/allergen-category/edit-allergen-category/edit-allergen-category.component';
 import { RecipeDetailsListComponent } from './features/recipe-details/recipe-details-list/recipe-details-list.component';
 import { AddRecipeDetailsComponent } from './features/recipe-details/add-recipe-details/add-recipe-details.component';
+import { EditRecipeDetailsComponent } from './features/recipe-details/edit-recipe-details/edit-recipe-details.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AddRecipeDetailsComponent } from './features/recipe-details/add-recipe-
     EditMealCategoryComponent,
     EditAllergenCategoryComponent,
     RecipeDetailsListComponent,
-    AddRecipeDetailsComponent
+    AddRecipeDetailsComponent,
+    EditRecipeDetailsComponent
   ],
   imports: [
     BrowserModule,
